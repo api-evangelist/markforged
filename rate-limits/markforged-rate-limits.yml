@@ -1,0 +1,46 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Markforged
+providerId: markforged
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: false
+tags:
+- 3D Printing
+- Additive Manufacturing
+- Industrial
+- Eiger
+- Fleet Management
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  The Eiger API V3 is a RESTful interface scoped to an Eiger organization and
+  authenticated with HTTP Basic Auth (Access Key / Secret Key). Markforged does
+  not publish specific public rate-limit values (RPS/RPM or quotas) for the
+  Eiger API. Clients should expect server-side throttling and design for it.
+  Specific limits are not reconciled in this artifact.
+notes: >-
+  No public Eiger API rate-limit numbers are documented. Verify any per-account
+  or per-key throttling, retry, and 429 behavior with Markforged/Eiger support
+  or the developer reference during reconciliation.
+sources:
+- https://www.eiger.io/developer
+- https://www.eiger.io/developer/spec
+responseCodes:
+  throttled: 429
+limits:
+- name: Eiger API Requests
+  scope: organization
+  metric: requests
+  limit: see provider documentation
+  notes: No public rate-limit value published for the Eiger API V3; assume server-side throttling.
+policies:
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on 429 responses.
+- name: Organization Scope
+  description: API keys (Access Key / Secret Key) are scoped to a single Eiger organization; limits, if any, apply per organization.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

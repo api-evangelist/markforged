@@ -1,0 +1,214 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Eiger API V3",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{accessKey}}",
+      "password": "{{secretKey}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Devices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": { "name": "List all devices in organization", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/devices" },
+          "docs": "List all devices (printers) in the organization."
+        },
+        {
+          "info": { "name": "Get device state", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/devices/{device_id}" },
+          "docs": "Get the state of a specific device."
+        },
+        {
+          "info": { "name": "Send build to printer", "type": "http" },
+          "http": { "method": "POST", "url": "https://www.eiger.io/api/v3/devices/{device_id}", "body": { "type": "json", "data": "{}" } },
+          "docs": "Send a build to a printer."
+        },
+        {
+          "info": { "name": "List queued jobs", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/devices/{device_id}/queue" },
+          "docs": "List queued jobs for a device."
+        },
+        {
+          "info": { "name": "Add build to queue", "type": "http" },
+          "http": { "method": "POST", "url": "https://www.eiger.io/api/v3/devices/{device_id}/queue", "body": { "type": "json", "data": "{}" } },
+          "docs": "Add a build to a device's queue."
+        },
+        {
+          "info": { "name": "Get queued job details", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/devices/{device_id}/queue/{queued_job_id}" },
+          "docs": "Get details of a queued job."
+        },
+        {
+          "info": { "name": "Remove job from queue", "type": "http" },
+          "http": { "method": "DELETE", "url": "https://www.eiger.io/api/v3/devices/{device_id}/queue/{queued_job_id}" },
+          "docs": "Remove a job from a device's queue."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Builds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": { "name": "List all builds in organization", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/builds" },
+          "docs": "List all builds in the organization."
+        },
+        {
+          "info": { "name": "Retrieve a specific build", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/builds/{build_id}" },
+          "docs": "Retrieve a specific build."
+        },
+        {
+          "info": { "name": "List approved builds", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/builds/approved" },
+          "docs": "List approved builds."
+        },
+        {
+          "info": { "name": "Update approved builds list", "type": "http" },
+          "http": { "method": "PUT", "url": "https://www.eiger.io/api/v3/builds/approved", "body": { "type": "json", "data": "{}" } },
+          "docs": "Update the approved-builds list."
+        },
+        {
+          "info": { "name": "Disable build approvals", "type": "http" },
+          "http": { "method": "DELETE", "url": "https://www.eiger.io/api/v3/builds/approved" },
+          "docs": "Disable build approvals."
+        },
+        {
+          "info": { "name": "Send build to backlog", "type": "http" },
+          "http": { "method": "POST", "url": "https://www.eiger.io/api/v3/backlog/{build_id}", "body": { "type": "json", "data": "{}" } },
+          "docs": "Send a build to the backlog."
+        },
+        {
+          "info": { "name": "Send build to job request queue", "type": "http" },
+          "http": { "method": "POST", "url": "https://www.eiger.io/api/v3/job-requests/{build_id}", "body": { "type": "json", "data": "{}" } },
+          "docs": "Send a build to the job-request queue."
+        },
+        {
+          "info": { "name": "Remove build from job request queue", "type": "http" },
+          "http": { "method": "DELETE", "url": "https://www.eiger.io/api/v3/job-requests/{build_id}" },
+          "docs": "Remove a build from the job-request queue."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Print Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": { "name": "List print jobs", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/print_jobs" },
+          "docs": "List print jobs."
+        },
+        {
+          "info": { "name": "Get print job details", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/print_jobs/{print_job_id}" },
+          "docs": "Get print job details."
+        },
+        {
+          "info": { "name": "Get scan report URLs", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/print_jobs/{print_job_id}/scan_report" },
+          "docs": "Get scan report URLs for a print job."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Parts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": { "name": "Get part details", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/parts/{part_id}" },
+          "docs": "Get part details."
+        },
+        {
+          "info": { "name": "Upload STL file", "type": "http" },
+          "http": { "method": "POST", "url": "https://www.eiger.io/api/v3/parts/upload_stl", "body": { "type": "multipart-form", "data": [] } },
+          "docs": "Upload an STL file."
+        },
+        {
+          "info": { "name": "Check slice job status", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/parts/slice_status/{slice_job_id}" },
+          "docs": "Check slice job status."
+        },
+        {
+          "info": { "name": "List organization settings presets", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/parts/settings_presets" },
+          "docs": "List organization settings presets."
+        },
+        {
+          "info": { "name": "Get part version", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/part_versions/{part_version_id}" },
+          "docs": "Get a part version."
+        },
+        {
+          "info": { "name": "Get part download URL", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/part_versions/{part_version_id}/download" },
+          "docs": "Get a part version download URL."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Printed Parts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": { "name": "List printed parts", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/printed_parts" },
+          "docs": "List printed parts."
+        },
+        {
+          "info": { "name": "Get printed part details", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/printed_parts/{printed_part_id}" },
+          "docs": "Get printed part details."
+        },
+        {
+          "info": { "name": "Get printed part scan report", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/printed_parts/{printed_part_id}/scan_report" },
+          "docs": "Get a printed part scan report."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": { "name": "List organization users", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/users" },
+          "docs": "List organization users."
+        },
+        {
+          "info": { "name": "Get user details", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/users/{user_id}" },
+          "docs": "Get user details."
+        },
+        {
+          "info": { "name": "Export custom analytics CSV", "type": "http" },
+          "http": { "method": "GET", "url": "https://www.eiger.io/api/v3/dashboard/custom_analytics_csv" },
+          "docs": "Export custom analytics CSV."
+        }
+      ]
+    }
+  ]
+}

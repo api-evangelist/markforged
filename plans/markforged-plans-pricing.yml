@@ -1,0 +1,128 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Markforged
+providerId: markforged
+created: '2026-06-20'
+modified: '2026-06-20'
+reconciled: false
+tags:
+- 3D Printing
+- Additive Manufacturing
+- Industrial
+- Eiger
+- Fleet Management
+- Plans
+description: >-
+  Markforged sells industrial 3D printing hardware (composite and metal
+  printers), consumable materials, and the Eiger cloud software platform,
+  typically through quotes, resellers, and enterprise agreements rather than
+  self-serve online plans. The Eiger API V3 is a platform capability available
+  to Eiger customers and does not carry separately published, metered API
+  pricing. Eiger is offered in tiers (for example Eiger and Eiger Fleet) whose
+  pricing is not publicly listed. No public, self-serve, per-call API pricing
+  is documented, so plan entries below are structural placeholders.
+notes: >-
+  Markforged does not publish self-serve API or software list pricing. Hardware,
+  materials, Eiger software tiers, and Digital Source are quoted via sales and
+  resellers. Values are not reconciled; verify with Markforged sales or an
+  authorized reseller during reconciliation.
+sources:
+- https://markforged.com
+- https://markforged.com/software
+- https://www.eiger.io/developer
+- https://markforged.com/management-integration
+plans:
+- id: markforged-eiger
+  name: Eiger Software
+  type: subscription
+  description: >-
+    Cloud (and on-prem/Eiger Deployments) 3D printing software for slicing,
+    print management, and a part library, bundled with Markforged printers.
+    Pricing not publicly listed.
+  entries:
+  - label: Eiger Software Subscription
+    name: eiger
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales / reseller
+    userMultiplied: false
+  elements:
+  - name: Slicing and Print Settings
+  - name: Print Management
+  - name: Part Library
+  - name: Eiger API V3 Access
+- id: markforged-eiger-fleet
+  name: Eiger Fleet
+  type: subscription
+  description: >-
+    Fleet-scale tier adding multi-site controls, advanced fleet management, and
+    factory-system integrations (ERP, MES, PLM) for organizations running many
+    printers. Pricing not publicly listed.
+  entries:
+  - label: Eiger Fleet Subscription
+    name: eiger_fleet
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales / reseller
+    userMultiplied: false
+  elements:
+  - name: Multi-Site Fleet Management
+  - name: Factory System Integrations
+  - name: Eiger API V3 Access
+  - name: Advanced Controls
+- id: markforged-digital-source
+  name: Digital Source
+  type: enterprise
+  description: >-
+    Secure licensing and on-demand printing of manufacturer-certified parts for
+    distributed manufacturing. ISO 27001 certified. Commercial terms negotiated
+    per vendor/customer.
+  entries:
+  - label: Digital Source Agreement
+    name: digital_source
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Secure Part Distribution
+  - name: Part Licensing
+  - name: Approved Print Service Provider Network
+- id: markforged-hardware
+  name: Printers and Materials
+  type: enterprise
+  description: >-
+    Composite (FX, Onyx, X-series) and metal (Metal X, PX100) industrial 3D
+    printers plus consumable materials, sold via quote and authorized
+    resellers.
+  entries:
+  - label: Hardware and Materials
+    name: hardware
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales / reseller
+    userMultiplied: false
+  elements:
+  - name: Composite Printers
+  - name: Metal Printers
+  - name: Consumable Materials
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,117 @@
+aid: markforged
+name: Markforged
+review:
+  question: Does Markforged expose a documented public API, and is the Eiger API publicly available or partner/enterprise gated?
+  answer: true
+  date: '2026-06-20'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No streaming, Server-Sent Events, or WebSocket surface is documented for
+    the Eiger API. The Eiger API V3 is a synchronous REST (HTTPS) interface
+    only, so no AsyncAPI document was authored.
+findings:
+  summary: |
+    Markforged publishes a documented public REST API - the Eiger API V3 -
+    with reference docs and an OpenAPI-described specification at
+    https://www.eiger.io/developer/spec. The API is described as RESTful, with
+    resources addressable at their own URIs and JSON responses. The base URL is
+    https://www.eiger.io/api/v3 and requests must use the fully qualified host
+    (https & www) to avoid redirect/security issues.
+
+    Access is gated by Eiger account ownership rather than open self-serve
+    signup: the API authenticates with HTTP Basic Auth using an Eiger Access
+    Key (username) and Secret Key (password) generated from an Eiger
+    organization, and all resources are scoped to that organization. The API
+    capability is associated with Eiger software tiers (Eiger / Eiger Fleet),
+    whose pricing is not publicly listed, so in practice the API is available
+    to paying Eiger customers. The documentation surface itself, however, is
+    public and was crawled for this catalog.
+
+    Digital Source (secure licensed distribution of manufacturer-certified
+    parts for distributed manufacturing) is a Markforged platform product built
+    on the same platform and certified for ISO 27001, but does NOT expose a
+    separately documented public developer API as of this review. It is
+    represented in the catalog as a product entry without an OpenAPI artifact.
+    No endpoints were fabricated for it.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://www.eiger.io/api/v3
+      documented: true
+    - protocol: SSE
+      scheme: https
+      documented: false
+      note: No Server-Sent Events streaming is documented for the Eiger API.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented for any Markforged product.
+  authentication:
+    scheme: HTTP Basic Auth
+    note: Access Key as username and Secret Key as password, generated per Eiger organization.
+  accessModel:
+    publicDocs: true
+    selfServeSignup: false
+    note: Docs and OpenAPI reference are public; API keys require an Eiger organization (Eiger / Eiger Fleet subscription). Effectively customer/enterprise gated for live use.
+  endpointsConfirmedRest:
+    - GET    https://www.eiger.io/api/v3/devices
+    - GET    https://www.eiger.io/api/v3/devices/{device_id}
+    - POST   https://www.eiger.io/api/v3/devices/{device_id}
+    - GET    https://www.eiger.io/api/v3/devices/{device_id}/queue
+    - POST   https://www.eiger.io/api/v3/devices/{device_id}/queue
+    - GET    https://www.eiger.io/api/v3/devices/{device_id}/queue/{queued_job_id}
+    - DELETE https://www.eiger.io/api/v3/devices/{device_id}/queue/{queued_job_id}
+    - GET    https://www.eiger.io/api/v3/builds
+    - GET    https://www.eiger.io/api/v3/builds/{build_id}
+    - GET    https://www.eiger.io/api/v3/builds/approved
+    - PUT    https://www.eiger.io/api/v3/builds/approved
+    - DELETE https://www.eiger.io/api/v3/builds/approved
+    - POST   https://www.eiger.io/api/v3/backlog/{build_id}
+    - POST   https://www.eiger.io/api/v3/job-requests/{build_id}
+    - DELETE https://www.eiger.io/api/v3/job-requests/{build_id}
+    - GET    https://www.eiger.io/api/v3/print_jobs
+    - GET    https://www.eiger.io/api/v3/print_jobs/{print_job_id}
+    - GET    https://www.eiger.io/api/v3/print_jobs/{print_job_id}/scan_report
+    - GET    https://www.eiger.io/api/v3/parts/{part_id}
+    - POST   https://www.eiger.io/api/v3/parts/upload_stl
+    - GET    https://www.eiger.io/api/v3/parts/slice_status/{slice_job_id}
+    - GET    https://www.eiger.io/api/v3/parts/settings_presets
+    - GET    https://www.eiger.io/api/v3/part_versions/{part_version_id}
+    - GET    https://www.eiger.io/api/v3/part_versions/{part_version_id}/download
+    - GET    https://www.eiger.io/api/v3/printed_parts
+    - GET    https://www.eiger.io/api/v3/printed_parts/{printed_part_id}
+    - GET    https://www.eiger.io/api/v3/printed_parts/{printed_part_id}/scan_report
+    - GET    https://www.eiger.io/api/v3/users
+    - GET    https://www.eiger.io/api/v3/users/{user_id}
+    - GET    https://www.eiger.io/api/v3/dashboard/custom_analytics_csv
+sources:
+  - url: https://www.eiger.io/developer
+    type: Documentation
+    note: Eiger API V3 developer landing page.
+  - url: https://www.eiger.io/developer/spec
+    type: APIReference
+    note: Eiger API V3 reference; RESTful, JSON responses, OpenAPI-described, base URL https://www.eiger.io/api/v3, HTTP Basic Auth.
+  - url: https://support.markforged.com/portal/s/article/Eiger-API
+    type: Documentation
+    note: Markforged support article on the Eiger API (portal-gated rendering).
+  - url: https://markforged.com/management-integration
+    type: Documentation
+    note: Describes integrating factory systems (ERP, MES, PLM) with Markforged via the Eiger API.
+  - url: https://markforged.com/resources/markforged-unlocks-the-future-of-distributed-manufacturing-enabling-manufacturer-certified-parts-to-be-licensed-and-printed-at-the-point-of-need
+    type: Documentation
+    note: Digital Source platform announcement; no separate public developer API documented.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    Cataloged the publicly documented Eiger API V3 across six sub-API resource
+    groups (Devices, Builds, Print Jobs, Parts, Printed Parts, Organizations)
+    plus a Digital Source product entry without a fabricated API. An OpenAPI
+    3.0.1 document was authored modeling the 30 documented REST endpoints with
+    HTTP Basic Auth. Plans, rate limits, and FinOps are marked reconciled:false
+    because Markforged does not publish self-serve software/API pricing or
+    rate-limit values.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

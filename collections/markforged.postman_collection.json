@@ -1,0 +1,1103 @@
+{
+  "info": {
+    "_postman_id": "47d06aff-e879-44fc-94b9-d878eaa56cc0",
+    "name": "Eiger API V3",
+    "description": {
+      "content": "REST API for the Markforged Eiger cloud 3D printing platform (Eiger API V3). Base URL https://www.eiger.io/api/v3. Authenticates with HTTP Basic Auth using an Eiger Access Key (username) and Secret Key (password).",
+      "type": "text/plain"
+    },
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "8970dbbf-5434-4ef4-88ec-a0c8eb9d8eec",
+      "name": "Devices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "448f5d4e-96d1-4db7-b97f-012ff1f06739",
+          "name": "List all devices in organization",
+          "request": {
+            "name": "List all devices in organization",
+            "description": {
+              "content": "List all devices in organization",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/devices",
+              "path": [
+                "devices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "8364cb06-eaa8-4370-b177-fad248d0a9b8",
+          "name": "Get device state",
+          "request": {
+            "name": "Get device state",
+            "description": {
+              "content": "Get device state",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/devices/{device_id}",
+              "path": [
+                "devices",
+                ":device_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "device_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "4541757d-626d-48c9-9288-750e927b0e2f",
+          "name": "Send build to printer",
+          "request": {
+            "name": "Send build to printer",
+            "description": {
+              "content": "Send build to printer",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/devices/{device_id}",
+              "path": [
+                "devices",
+                ":device_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "device_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "eadd7790-4b02-45da-8d65-f0029396d4b7",
+          "name": "List queued jobs",
+          "request": {
+            "name": "List queued jobs",
+            "description": {
+              "content": "List queued jobs",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/devices/{device_id}/queue",
+              "path": [
+                "devices",
+                ":device_id",
+                "queue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "device_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "d2793da0-7b19-43fe-b55f-32e3fc0679f4",
+          "name": "Add build to queue",
+          "request": {
+            "name": "Add build to queue",
+            "description": {
+              "content": "Add build to queue",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/devices/{device_id}/queue",
+              "path": [
+                "devices",
+                ":device_id",
+                "queue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "device_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "51071745-d9fc-490b-9ee2-b83ce9417e7d",
+          "name": "Get queued job details",
+          "request": {
+            "name": "Get queued job details",
+            "description": {
+              "content": "Get queued job details",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/devices/{device_id}/queue/{queued_job_id}",
+              "path": [
+                "devices",
+                ":device_id",
+                "queue",
+                ":queued_job_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "device_id",
+                  "value": ""
+                },
+                {
+                  "key": "queued_job_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "8ee9d0e1-321f-4c42-a8af-ac436a7965b4",
+          "name": "Remove job from queue",
+          "request": {
+            "name": "Remove job from queue",
+            "description": {
+              "content": "Remove job from queue",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/devices/{device_id}/queue/{queued_job_id}",
+              "path": [
+                "devices",
+                ":device_id",
+                "queue",
+                ":queued_job_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "device_id",
+                  "value": ""
+                },
+                {
+                  "key": "queued_job_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "bfed6c7c-fd57-4f25-845c-36480fff1e04",
+      "name": "Builds",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5ca1ec3e-7fd9-41ba-b06c-681d6e48fd0b",
+          "name": "List all builds in organization",
+          "request": {
+            "name": "List all builds in organization",
+            "description": {
+              "content": "List all builds in organization",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/builds",
+              "path": [
+                "builds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "90f22760-bbb4-4b13-83a8-9419d6def414",
+          "name": "Retrieve a specific build",
+          "request": {
+            "name": "Retrieve a specific build",
+            "description": {
+              "content": "Retrieve a specific build",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/builds/{build_id}",
+              "path": [
+                "builds",
+                ":build_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "build_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "8867e498-4b98-4731-a58e-e3235cdc6156",
+          "name": "List approved builds",
+          "request": {
+            "name": "List approved builds",
+            "description": {
+              "content": "List approved builds",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/builds/approved",
+              "path": [
+                "builds",
+                "approved"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "010b9953-96cf-46c4-a467-500ec63df146",
+          "name": "Update approved builds list",
+          "request": {
+            "name": "Update approved builds list",
+            "description": {
+              "content": "Update approved builds list",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/builds/approved",
+              "path": [
+                "builds",
+                "approved"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "ed7be0c4-384e-4dd4-8e51-04a6750fb194",
+          "name": "Disable build approvals",
+          "request": {
+            "name": "Disable build approvals",
+            "description": {
+              "content": "Disable build approvals",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/builds/approved",
+              "path": [
+                "builds",
+                "approved"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "efea57a8-1221-41e7-b4d6-20bc31cf01d0",
+          "name": "Send build to backlog",
+          "request": {
+            "name": "Send build to backlog",
+            "description": {
+              "content": "Send build to backlog",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/backlog/{build_id}",
+              "path": [
+                "backlog",
+                ":build_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "build_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "ef3b078c-bbe5-466c-99b5-3b3d2cca7a87",
+          "name": "Send build to job request queue",
+          "request": {
+            "name": "Send build to job request queue",
+            "description": {
+              "content": "Send build to job request queue",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/job-requests/{build_id}",
+              "path": [
+                "job-requests",
+                ":build_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "build_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "084b5393-24c1-4c3a-a32d-9d08f953a082",
+          "name": "Remove build from job request queue",
+          "request": {
+            "name": "Remove build from job request queue",
+            "description": {
+              "content": "Remove build from job request queue",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/job-requests/{build_id}",
+              "path": [
+                "job-requests",
+                ":build_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "build_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "fe439a24-d33a-4595-b8c9-3a3a20b0704a",
+      "name": "Print Jobs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4c3b04ce-4af5-4a38-a28e-4b3d5a7babd5",
+          "name": "List print jobs",
+          "request": {
+            "name": "List print jobs",
+            "description": {
+              "content": "List print jobs",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/print_jobs",
+              "path": [
+                "print_jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "1476e5f5-d747-4691-aa21-51229a710e4c",
+          "name": "Get print job details",
+          "request": {
+            "name": "Get print job details",
+            "description": {
+              "content": "Get print job details",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/print_jobs/{print_job_id}",
+              "path": [
+                "print_jobs",
+                ":print_job_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "print_job_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "ba035cb4-8a94-4eb6-b32e-9a1537e8c88e",
+          "name": "Get scan report URLs",
+          "request": {
+            "name": "Get scan report URLs",
+            "description": {
+              "content": "Get scan report URLs",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/print_jobs/{print_job_id}/scan_report",
+              "path": [
+                "print_jobs",
+                ":print_job_id",
+                "scan_report"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "print_job_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "077b9818-b4dd-4002-9d92-5b102492cca3",
+      "name": "Parts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "33735317-890e-4ae9-b92e-b7fc4d204cf8",
+          "name": "Get part details",
+          "request": {
+            "name": "Get part details",
+            "description": {
+              "content": "Get part details",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/parts/{part_id}",
+              "path": [
+                "parts",
+                ":part_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "part_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "9cba753a-29cf-4d9d-9c28-e83b4efb07a3",
+          "name": "Upload STL file",
+          "request": {
+            "name": "Upload STL file",
+            "description": {
+              "content": "Upload STL file",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/parts/upload_stl",
+              "path": [
+                "parts",
+                "upload_stl"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "0b386a66-e127-422a-9f70-14c44e21be54",
+          "name": "Check slice job status",
+          "request": {
+            "name": "Check slice job status",
+            "description": {
+              "content": "Check slice job status",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/parts/slice_status/{slice_job_id}",
+              "path": [
+                "parts",
+                "slice_status",
+                ":slice_job_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "slice_job_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "c24913d9-f685-42ef-858f-3a2949bad8f0",
+          "name": "List organization settings presets",
+          "request": {
+            "name": "List organization settings presets",
+            "description": {
+              "content": "List organization settings presets",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/parts/settings_presets",
+              "path": [
+                "parts",
+                "settings_presets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "93a6f9b5-2cc6-4069-a48b-d0e91146e2ed",
+          "name": "Get part version",
+          "request": {
+            "name": "Get part version",
+            "description": {
+              "content": "Get part version",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/part_versions/{part_version_id}",
+              "path": [
+                "part_versions",
+                ":part_version_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "part_version_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "52c0302e-9403-49e0-ac04-cdf52cfa8ebf",
+          "name": "Get part download URL",
+          "request": {
+            "name": "Get part download URL",
+            "description": {
+              "content": "Get part download URL",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/part_versions/{part_version_id}/download",
+              "path": [
+                "part_versions",
+                ":part_version_id",
+                "download"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "part_version_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "e5b71eb7-683d-444b-ad22-0c876c9d4cc5",
+      "name": "Printed Parts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cac0a3f9-efc8-44a5-90f6-11dc98ceb34e",
+          "name": "List printed parts",
+          "request": {
+            "name": "List printed parts",
+            "description": {
+              "content": "List printed parts",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/printed_parts",
+              "path": [
+                "printed_parts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "4dec36c3-9f56-488c-86fe-e1aa28d8613e",
+          "name": "Get printed part details",
+          "request": {
+            "name": "Get printed part details",
+            "description": {
+              "content": "Get printed part details",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/printed_parts/{printed_part_id}",
+              "path": [
+                "printed_parts",
+                ":printed_part_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "printed_part_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "fee974c8-0dc9-46dc-b67d-8296e863722d",
+          "name": "Get printed part scan report",
+          "request": {
+            "name": "Get printed part scan report",
+            "description": {
+              "content": "Get printed part scan report",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/printed_parts/{printed_part_id}/scan_report",
+              "path": [
+                "printed_parts",
+                ":printed_part_id",
+                "scan_report"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "printed_part_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "15df2300-2120-4020-864d-7fa0d2d639c5",
+      "name": "Organizations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "117ad473-3d86-4f44-bac9-fc56c70d74bb",
+          "name": "List organization users",
+          "request": {
+            "name": "List organization users",
+            "description": {
+              "content": "List organization users",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "874e859a-2baf-4426-8e56-48cadab913d4",
+          "name": "Get user details",
+          "request": {
+            "name": "Get user details",
+            "description": {
+              "content": "Get user details",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/{user_id}",
+              "path": [
+                "users",
+                ":user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "user_id",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "a5581d6f-0adf-4119-9df8-92e06bc84c3d",
+          "name": "Export custom analytics CSV",
+          "request": {
+            "name": "Export custom analytics CSV",
+            "description": {
+              "content": "Export custom analytics CSV",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/custom_analytics_csv",
+              "path": [
+                "dashboard",
+                "custom_analytics_csv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{accessKey}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{secretKey}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.eiger.io/api/v3",
+      "type": "string"
+    },
+    {
+      "key": "accessKey",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "secretKey",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

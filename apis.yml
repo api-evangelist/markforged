@@ -1,0 +1,189 @@
+aid: markforged
+url: https://raw.githubusercontent.com/api-evangelist/markforged/refs/heads/main/apis.yml
+name: Markforged
+kind: company
+description: Markforged builds industrial additive manufacturing systems - composite
+  (FX, Onyx, X-series) and metal (Metal X, PX100) 3D printers - managed through the
+  Eiger cloud software platform. The Eiger API (V3) exposes a REST interface over
+  HTTP Basic Auth for managing devices, builds, print jobs, and parts, letting
+  customers integrate Markforged additive workflows into ERP, MES, PLM, and other
+  factory systems. Digital Source extends the platform with secure, licensed
+  distribution of manufacturer-certified parts for distributed manufacturing.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- 3D Printing
+- Additive Manufacturing
+- Industrial
+- Eiger
+- Fleet Management
+created: '2026-06-20'
+modified: '2026-06-20'
+specificationVersion: '0.19'
+apis:
+- aid: markforged:eiger-devices-api
+  name: Eiger Devices API
+  tags:
+  - Devices
+  - Printers
+  - Fleet
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.eiger.io/developer/spec
+  baseURL: https://www.eiger.io/api/v3
+  properties:
+  - url: https://www.eiger.io/developer
+    type: Documentation
+  - url: https://www.eiger.io/developer/spec
+    type: APIReference
+  - url: openapi/markforged-openapi.yml
+    type: OpenAPI
+  - url: collections/markforged.postman_collection.json
+    type: PostmanCollection
+  - url: collections/markforged.opencollection.json
+    type: OpenCollection
+  description: Lists Markforged printers (devices) in an Eiger organization, reads
+    device state, sends builds to a printer, and manages each device's print queue.
+- aid: markforged:eiger-builds-api
+  name: Eiger Builds API
+  tags:
+  - Builds
+  - Approvals
+  - Job Requests
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.eiger.io/developer/spec
+  baseURL: https://www.eiger.io/api/v3
+  properties:
+  - url: https://www.eiger.io/developer
+    type: Documentation
+  - url: https://www.eiger.io/developer/spec
+    type: APIReference
+  - url: openapi/markforged-openapi.yml
+    type: OpenAPI
+  - url: collections/markforged.postman_collection.json
+    type: PostmanCollection
+  - url: collections/markforged.opencollection.json
+    type: OpenCollection
+  description: Lists and retrieves builds, manages the approved-builds list, and
+    routes builds to the backlog or the job-request queue for production.
+- aid: markforged:eiger-print-jobs-api
+  name: Eiger Print Jobs API
+  tags:
+  - Print Jobs
+  - Production
+  - Scan Reports
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.eiger.io/developer/spec
+  baseURL: https://www.eiger.io/api/v3
+  properties:
+  - url: https://www.eiger.io/developer
+    type: Documentation
+  - url: https://www.eiger.io/developer/spec
+    type: APIReference
+  - url: openapi/markforged-openapi.yml
+    type: OpenAPI
+  - url: collections/markforged.postman_collection.json
+    type: PostmanCollection
+  - url: collections/markforged.opencollection.json
+    type: OpenCollection
+  description: Lists print jobs and retrieves print job details and scan report
+    URLs for in-process inspection and traceability.
+- aid: markforged:eiger-parts-api
+  name: Eiger Parts API
+  tags:
+  - Parts
+  - STL Upload
+  - Slicing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.eiger.io/developer/spec
+  baseURL: https://www.eiger.io/api/v3
+  properties:
+  - url: https://www.eiger.io/developer
+    type: Documentation
+  - url: https://www.eiger.io/developer/spec
+    type: APIReference
+  - url: openapi/markforged-openapi.yml
+    type: OpenAPI
+  - url: collections/markforged.postman_collection.json
+    type: PostmanCollection
+  - url: collections/markforged.opencollection.json
+    type: OpenCollection
+  description: Retrieves parts and part versions, uploads STL files, checks slice
+    job status, downloads part versions, and lists organization settings presets.
+- aid: markforged:eiger-printed-parts-api
+  name: Eiger Printed Parts API
+  tags:
+  - Printed Parts
+  - Inventory
+  - Scan Reports
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.eiger.io/developer/spec
+  baseURL: https://www.eiger.io/api/v3
+  properties:
+  - url: https://www.eiger.io/developer
+    type: Documentation
+  - url: https://www.eiger.io/developer/spec
+    type: APIReference
+  - url: openapi/markforged-openapi.yml
+    type: OpenAPI
+  - url: collections/markforged.postman_collection.json
+    type: PostmanCollection
+  - url: collections/markforged.opencollection.json
+    type: OpenCollection
+  description: Lists physically printed parts, retrieves printed part details, and
+    fetches per-printed-part scan reports for the additive digital inventory.
+- aid: markforged:eiger-organizations-api
+  name: Eiger Organizations API
+  tags:
+  - Organizations
+  - Users
+  - Analytics
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.eiger.io/developer/spec
+  baseURL: https://www.eiger.io/api/v3
+  properties:
+  - url: https://www.eiger.io/developer
+    type: Documentation
+  - url: https://www.eiger.io/developer/spec
+    type: APIReference
+  - url: openapi/markforged-openapi.yml
+    type: OpenAPI
+  - url: collections/markforged.postman_collection.json
+    type: PostmanCollection
+  - url: collections/markforged.opencollection.json
+    type: OpenCollection
+  description: Lists and retrieves users scoped to the Eiger organization and
+    exports custom analytics CSV from the dashboard for organization-level
+    reporting.
+- aid: markforged:digital-source
+  name: Markforged Digital Source
+  tags:
+  - Digital Source
+  - Distributed Manufacturing
+  - Licensing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://markforged.com/management-integration
+  properties:
+  - url: https://markforged.com/management-integration
+    type: Documentation
+  description: Secure, licensed distribution of manufacturer-certified parts for
+    distributed (point-of-need) manufacturing. Built on the Markforged platform
+    (ISO 27001 certified); no separate public developer API is documented as of
+    this catalog date - integration is via the Eiger platform and partner
+    arrangements.
+common:
+- type: GitHubOrganization
+  url: https://github.com/MarkForged
+- type: LinkedIn
+  url: https://www.linkedin.com/company/markforged
+- type: Website
+  url: https://markforged.com
+- type: Documentation
+  url: https://www.eiger.io/developer
+- type: Plans
+  url: plans/markforged-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/markforged-rate-limits.yml
+- type: FinOps
+  url: finops/markforged-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
