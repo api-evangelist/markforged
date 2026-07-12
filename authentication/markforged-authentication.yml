@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/markforged-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic Auth using an Eiger Access Key as the username and Secret Key as the
+    password, generated from the Eiger organization settings.
+  sources:
+  - openapi/markforged-openapi.yml

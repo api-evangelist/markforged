@@ -170,6 +170,10 @@ apis:
     this catalog date - integration is via the Eiger platform and partner
     arrangements.
 common:
+- type: DomainSecurity
+  url: security/markforged-domain-security.yml
+- type: Authentication
+  url: authentication/markforged-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/MarkForged
 - type: LinkedIn
@@ -184,6 +188,8 @@ common:
   url: rate-limits/markforged-rate-limits.yml
 - type: FinOps
   url: finops/markforged-finops.yml
+- url: https://markforged.com/resources/blog
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

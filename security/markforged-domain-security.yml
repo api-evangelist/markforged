@@ -1,0 +1,36 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: markforged.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan 30 23:59:59 2027 GMT
+  hsts: null
+- host: www.eiger.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Apr  5 15:34:19 2027 GMT
+  hsts: null
+domains:
+- domain: markforged.com
+  dnssec: false
+  caa:
+  - 0 issuewild "comodoca.com"
+  - 0 issuewild "digicert.com; cansignhttpexchanges=yes"
+  - 0 issuewild "letsencrypt.org"
+  - 0 issuewild "pki.goog; cansignhttpexchanges=yes"
+  - 0 issuewild "ssl.com"
+  - 0 iodef "mailto:devops+caa@markforged.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: eiger.io
+  dnssec: false
+  caa:
+  - 0 issue "starfieldtech.com"
+  - 0 iodef "mailto:devops+caa@markforged.com"
+  - 0 issue "amazonaws.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: none
