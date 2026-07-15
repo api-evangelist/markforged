@@ -170,6 +170,8 @@ apis:
     this catalog date - integration is via the Eiger platform and partner
     arrangements.
 common:
+- type: AgenticAccess
+  url: agentic-access/markforged-agentic-access.yml
 - type: DomainSecurity
   url: security/markforged-domain-security.yml
 - type: Authentication
