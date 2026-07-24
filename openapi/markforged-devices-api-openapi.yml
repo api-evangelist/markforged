@@ -1,0 +1,128 @@
+openapi: 3.0.1
+info:
+  title: Eiger API V3 Builds Devices API
+  description: REST API for the Markforged Eiger cloud 3D printing platform. The Eiger API is organized around resources (devices, builds, print jobs, parts, printed parts, users) each addressable at its own URI, accessed with standard HTTP methods. Responses are JSON. Authentication is HTTP Basic Auth using an Eiger Access Key (username) and Secret Key (password). Requests must use the fully qualified host https://www.eiger.io to avoid redirect/security issues. This document models the publicly documented Eiger API V3 surface; consult the official reference at https://www.eiger.io/developer/spec for request and response schemas, which are not fully reproduced here.
+  termsOfService: https://markforged.com/terms
+  contact:
+    name: Markforged / Eiger Support
+    url: https://support.markforged.com/portal/s/
+  version: v3
+servers:
+- url: https://www.eiger.io/api/v3
+security:
+- basicAuth: []
+tags:
+- name: Devices
+paths:
+  /devices:
+    get:
+      operationId: listDevices
+      tags:
+      - Devices
+      summary: List all devices (printers) in the organization.
+      responses:
+        '200':
+          description: A list of devices.
+  /devices/{device_id}:
+    get:
+      operationId: getDevice
+      tags:
+      - Devices
+      summary: Get the state of a specific device.
+      parameters:
+      - name: device_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Device state.
+    post:
+      operationId: sendBuildToPrinter
+      tags:
+      - Devices
+      summary: Send a build to a printer.
+      parameters:
+      - name: device_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Build sent to the printer.
+  /devices/{device_id}/queue:
+    get:
+      operationId: listDeviceQueue
+      tags:
+      - Devices
+      summary: List queued jobs for a device.
+      parameters:
+      - name: device_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of queued jobs.
+    post:
+      operationId: addBuildToQueue
+      tags:
+      - Devices
+      summary: Add a build to a device's queue.
+      parameters:
+      - name: device_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Build added to the queue.
+  /devices/{device_id}/queue/{queued_job_id}:
+    get:
+      operationId: getQueuedJob
+      tags:
+      - Devices
+      summary: Get details of a queued job.
+      parameters:
+      - name: device_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: queued_job_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Queued job details.
+    delete:
+      operationId: removeQueuedJob
+      tags:
+      - Devices
+      summary: Remove a job from a device's queue.
+      parameters:
+      - name: device_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: queued_job_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Job removed from the queue.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Auth using an Eiger Access Key as the username and Secret Key as the password, generated from the Eiger organization settings.

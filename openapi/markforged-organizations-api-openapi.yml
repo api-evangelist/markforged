@@ -1,0 +1,59 @@
+openapi: 3.0.1
+info:
+  title: Eiger API V3 Builds Organizations API
+  description: REST API for the Markforged Eiger cloud 3D printing platform. The Eiger API is organized around resources (devices, builds, print jobs, parts, printed parts, users) each addressable at its own URI, accessed with standard HTTP methods. Responses are JSON. Authentication is HTTP Basic Auth using an Eiger Access Key (username) and Secret Key (password). Requests must use the fully qualified host https://www.eiger.io to avoid redirect/security issues. This document models the publicly documented Eiger API V3 surface; consult the official reference at https://www.eiger.io/developer/spec for request and response schemas, which are not fully reproduced here.
+  termsOfService: https://markforged.com/terms
+  contact:
+    name: Markforged / Eiger Support
+    url: https://support.markforged.com/portal/s/
+  version: v3
+servers:
+- url: https://www.eiger.io/api/v3
+security:
+- basicAuth: []
+tags:
+- name: Organizations
+paths:
+  /users:
+    get:
+      operationId: listUsers
+      tags:
+      - Organizations
+      summary: List organization users.
+      responses:
+        '200':
+          description: A list of users.
+  /users/{user_id}:
+    get:
+      operationId: getUser
+      tags:
+      - Organizations
+      summary: Get user details.
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: User details.
+  /dashboard/custom_analytics_csv:
+    get:
+      operationId: getCustomAnalyticsCsv
+      tags:
+      - Organizations
+      summary: Export custom analytics CSV.
+      responses:
+        '200':
+          description: Custom analytics CSV export.
+          content:
+            text/csv:
+              schema:
+                type: string
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Auth using an Eiger Access Key as the username and Secret Key as the password, generated from the Eiger organization settings.

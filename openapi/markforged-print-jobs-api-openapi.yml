@@ -1,0 +1,61 @@
+openapi: 3.0.1
+info:
+  title: Eiger API V3 Builds Print Jobs API
+  description: REST API for the Markforged Eiger cloud 3D printing platform. The Eiger API is organized around resources (devices, builds, print jobs, parts, printed parts, users) each addressable at its own URI, accessed with standard HTTP methods. Responses are JSON. Authentication is HTTP Basic Auth using an Eiger Access Key (username) and Secret Key (password). Requests must use the fully qualified host https://www.eiger.io to avoid redirect/security issues. This document models the publicly documented Eiger API V3 surface; consult the official reference at https://www.eiger.io/developer/spec for request and response schemas, which are not fully reproduced here.
+  termsOfService: https://markforged.com/terms
+  contact:
+    name: Markforged / Eiger Support
+    url: https://support.markforged.com/portal/s/
+  version: v3
+servers:
+- url: https://www.eiger.io/api/v3
+security:
+- basicAuth: []
+tags:
+- name: Print Jobs
+paths:
+  /print_jobs:
+    get:
+      operationId: listPrintJobs
+      tags:
+      - Print Jobs
+      summary: List print jobs.
+      responses:
+        '200':
+          description: A list of print jobs.
+  /print_jobs/{print_job_id}:
+    get:
+      operationId: getPrintJob
+      tags:
+      - Print Jobs
+      summary: Get print job details.
+      parameters:
+      - name: print_job_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Print job details.
+  /print_jobs/{print_job_id}/scan_report:
+    get:
+      operationId: getPrintJobScanReport
+      tags:
+      - Print Jobs
+      summary: Get scan report URLs for a print job.
+      parameters:
+      - name: print_job_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Scan report URLs.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Auth using an Eiger Access Key as the username and Secret Key as the password, generated from the Eiger organization settings.

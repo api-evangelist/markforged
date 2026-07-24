@@ -1,0 +1,110 @@
+openapi: 3.0.1
+info:
+  title: Eiger API V3 Builds Parts API
+  description: REST API for the Markforged Eiger cloud 3D printing platform. The Eiger API is organized around resources (devices, builds, print jobs, parts, printed parts, users) each addressable at its own URI, accessed with standard HTTP methods. Responses are JSON. Authentication is HTTP Basic Auth using an Eiger Access Key (username) and Secret Key (password). Requests must use the fully qualified host https://www.eiger.io to avoid redirect/security issues. This document models the publicly documented Eiger API V3 surface; consult the official reference at https://www.eiger.io/developer/spec for request and response schemas, which are not fully reproduced here.
+  termsOfService: https://markforged.com/terms
+  contact:
+    name: Markforged / Eiger Support
+    url: https://support.markforged.com/portal/s/
+  version: v3
+servers:
+- url: https://www.eiger.io/api/v3
+security:
+- basicAuth: []
+tags:
+- name: Parts
+paths:
+  /parts/{part_id}:
+    get:
+      operationId: getPart
+      tags:
+      - Parts
+      summary: Get part details.
+      parameters:
+      - name: part_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Part details.
+  /parts/upload_stl:
+    post:
+      operationId: uploadStl
+      tags:
+      - Parts
+      summary: Upload an STL file.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: STL uploaded; slice job created.
+  /parts/slice_status/{slice_job_id}:
+    get:
+      operationId: getSliceStatus
+      tags:
+      - Parts
+      summary: Check slice job status.
+      parameters:
+      - name: slice_job_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Slice job status.
+  /parts/settings_presets:
+    get:
+      operationId: listSettingsPresets
+      tags:
+      - Parts
+      summary: List organization settings presets.
+      responses:
+        '200':
+          description: A list of settings presets.
+  /part_versions/{part_version_id}:
+    get:
+      operationId: getPartVersion
+      tags:
+      - Parts
+      summary: Get a part version.
+      parameters:
+      - name: part_version_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Part version details.
+  /part_versions/{part_version_id}/download:
+    get:
+      operationId: getPartVersionDownload
+      tags:
+      - Parts
+      summary: Get a part version download URL.
+      parameters:
+      - name: part_version_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Part version download URL.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Auth using an Eiger Access Key as the username and Secret Key as the password, generated from the Eiger organization settings.
