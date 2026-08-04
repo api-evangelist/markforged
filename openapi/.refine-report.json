@@ -1,0 +1,24 @@
+{
+  "provider": "markforged",
+  "sources": [
+    "markforged-builds-api-openapi.yml",
+    "markforged-devices-api-openapi.yml",
+    "markforged-organizations-api-openapi.yml",
+    "markforged-parts-api-openapi.yml",
+    "markforged-print-jobs-api-openapi.yml",
+    "markforged-printed-parts-api-openapi.yml"
+  ],
+  "outputs": [
+    "markforged-builds-api-openapi.yml",
+    "markforged-devices-api-openapi.yml",
+    "markforged-organizations-api-openapi.yml",
+    "markforged-parts-api-openapi.yml",
+    "markforged-print-jobs-api-openapi.yml",
+    "markforged-printed-parts-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
