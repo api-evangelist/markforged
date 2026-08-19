@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Eiger API V3 Builds Print Jobs API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Print Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List print jobs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/print_jobs"
+          },
+          "docs": "List print jobs."
+        },
+        {
+          "info": {
+            "name": "Get print job details.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/print_jobs/:print_job_id",
+            "params": [
+              {
+                "name": "print_job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get print job details."
+        },
+        {
+          "info": {
+            "name": "Get scan report URLs for a print job.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/print_jobs/:print_job_id/scan_report",
+            "params": [
+              {
+                "name": "print_job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get scan report URLs for a print job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

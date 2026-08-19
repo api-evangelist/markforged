@@ -1,0 +1,141 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Eiger API V3 Builds API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Builds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all builds in the organization.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/builds"
+          },
+          "docs": "List all builds in the organization."
+        },
+        {
+          "info": {
+            "name": "Retrieve a specific build.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/builds/:build_id",
+            "params": [
+              {
+                "name": "build_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific build."
+        },
+        {
+          "info": {
+            "name": "List approved builds.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/builds/approved"
+          },
+          "docs": "List approved builds."
+        },
+        {
+          "info": {
+            "name": "Update the approved-builds list.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://www.eiger.io/api/v3/builds/approved"
+          },
+          "docs": "Update the approved-builds list."
+        },
+        {
+          "info": {
+            "name": "Disable build approvals.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.eiger.io/api/v3/builds/approved"
+          },
+          "docs": "Disable build approvals."
+        },
+        {
+          "info": {
+            "name": "Send a build to the backlog.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.eiger.io/api/v3/backlog/:build_id",
+            "params": [
+              {
+                "name": "build_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Send a build to the backlog."
+        },
+        {
+          "info": {
+            "name": "Send a build to the job-request queue.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.eiger.io/api/v3/job-requests/:build_id",
+            "params": [
+              {
+                "name": "build_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Send a build to the job-request queue."
+        },
+        {
+          "info": {
+            "name": "Remove a build from the job-request queue.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.eiger.io/api/v3/job-requests/:build_id",
+            "params": [
+              {
+                "name": "build_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove a build from the job-request queue."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

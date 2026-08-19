@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Eiger API V3 Builds Organizations API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List organization users.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/users"
+          },
+          "docs": "List organization users."
+        },
+        {
+          "info": {
+            "name": "Get user details.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/users/:user_id",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get user details."
+        },
+        {
+          "info": {
+            "name": "Export custom analytics CSV.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/dashboard/custom_analytics_csv"
+          },
+          "docs": "Export custom analytics CSV."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

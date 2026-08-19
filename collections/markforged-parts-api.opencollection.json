@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Eiger API V3 Builds Parts API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Parts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get part details.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/parts/:part_id",
+            "params": [
+              {
+                "name": "part_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get part details."
+        },
+        {
+          "info": {
+            "name": "Upload an STL file.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.eiger.io/api/v3/parts/upload_stl",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload an STL file."
+        },
+        {
+          "info": {
+            "name": "Check slice job status.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/parts/slice_status/:slice_job_id",
+            "params": [
+              {
+                "name": "slice_job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Check slice job status."
+        },
+        {
+          "info": {
+            "name": "List organization settings presets.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/parts/settings_presets"
+          },
+          "docs": "List organization settings presets."
+        },
+        {
+          "info": {
+            "name": "Get a part version.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/part_versions/:part_version_id",
+            "params": [
+              {
+                "name": "part_version_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a part version."
+        },
+        {
+          "info": {
+            "name": "Get a part version download URL.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/part_versions/:part_version_id/download",
+            "params": [
+              {
+                "name": "part_version_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a part version download URL."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

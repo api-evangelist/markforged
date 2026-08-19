@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Eiger API V3 Builds Printed Parts API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Printed Parts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List printed parts.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/printed_parts"
+          },
+          "docs": "List printed parts."
+        },
+        {
+          "info": {
+            "name": "Get printed part details.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/printed_parts/:printed_part_id",
+            "params": [
+              {
+                "name": "printed_part_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get printed part details."
+        },
+        {
+          "info": {
+            "name": "Get a printed part scan report.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/printed_parts/:printed_part_id/scan_report",
+            "params": [
+              {
+                "name": "printed_part_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a printed part scan report."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,154 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Eiger API V3 Builds Devices API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Devices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all devices (printers) in the organization.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/devices"
+          },
+          "docs": "List all devices (printers) in the organization."
+        },
+        {
+          "info": {
+            "name": "Get the state of a specific device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/devices/:device_id",
+            "params": [
+              {
+                "name": "device_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the state of a specific device."
+        },
+        {
+          "info": {
+            "name": "Send a build to a printer.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.eiger.io/api/v3/devices/:device_id",
+            "params": [
+              {
+                "name": "device_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Send a build to a printer."
+        },
+        {
+          "info": {
+            "name": "List queued jobs for a device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/devices/:device_id/queue",
+            "params": [
+              {
+                "name": "device_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List queued jobs for a device."
+        },
+        {
+          "info": {
+            "name": "Add a build to a device's queue.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.eiger.io/api/v3/devices/:device_id/queue",
+            "params": [
+              {
+                "name": "device_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add a build to a device's queue."
+        },
+        {
+          "info": {
+            "name": "Get details of a queued job.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eiger.io/api/v3/devices/:device_id/queue/:queued_job_id",
+            "params": [
+              {
+                "name": "device_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "queued_job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get details of a queued job."
+        },
+        {
+          "info": {
+            "name": "Remove a job from a device's queue.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.eiger.io/api/v3/devices/:device_id/queue/:queued_job_id",
+            "params": [
+              {
+                "name": "device_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "queued_job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove a job from a device's queue."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
