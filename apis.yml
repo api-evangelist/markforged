@@ -90,6 +90,8 @@ apis:
   humanURL: https://www.eiger.io/developer/spec
   baseURL: https://www.eiger.io/api/v3
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
