@@ -9,6 +9,18 @@ description: Markforged builds industrial additive manufacturing systems - compo
   customers integrate Markforged additive workflows into ERP, MES, PLM, and other
   factory systems. Digital Source extends the platform with secure, licensed
   distribution of manufacturer-certified parts for distributed manufacturing.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
