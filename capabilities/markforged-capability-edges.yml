@@ -1,0 +1,36 @@
+slug: markforged
+provider: Markforged
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Manufacturing & Industrial
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Devices
+  spec_file: markforged-devices-api-openapi.yml
+  capability_id: BC-1010.30
+  capability_id_l1: BC-1010
+  capability_name: Machine Operations Management
+  confidence: 0.75
+  evidence: GET /devices 'List all devices (printers) in the organization', 'Get the state of a specific
+    device', POST /devices/{device_id} 'Send a build to a printer', GET /devices/{device_id}/queue 'List
+    queued jobs for a device'
+  reason: Operations monitor printer state and manage each machine's job queue — machine operations and
+    dispatching on the production floor, i.e. shop-floor machine operations management.
+- tag: Print Jobs
+  spec_file: markforged-print-jobs-api-openapi.yml
+  capability_id: BC-1010.20
+  capability_id_l1: BC-1010
+  capability_name: Shop Floor Execution Management
+  confidence: 0.7
+  evidence: GET /print_jobs 'List print jobs'; GET /print_jobs/{print_job_id}/scan_report 'Get scan report
+    URLs for a print job'
+  reason: Print jobs are the actual production runs executed on the printers, with scan reports of execution
+    results — shop-floor execution tracking in an additive manufacturing context.

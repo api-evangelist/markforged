@@ -171,6 +171,9 @@ apis:
   - type: OpenCollection
     url: collections/markforged.opencollection.json
 common:
+- type: CapabilityMap
+  url: capabilities/markforged-capability-edges.yml
+  name: Markforged Business Capability Map
 - type: AgenticAccess
   url: agentic-access/markforged-agentic-access.yml
 - type: DomainSecurity
