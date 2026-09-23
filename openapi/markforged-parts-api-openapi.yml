@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Eiger API V3 Builds Parts API
-  description: REST API for the Markforged Eiger cloud 3D printing platform. The Eiger API is organized around resources (devices, builds, print jobs, parts, printed parts, users) each addressable at its own URI, accessed with standard HTTP methods. Responses are JSON. Authentication is HTTP Basic Auth using an Eiger Access Key (username) and Secret Key (password). Requests must use the fully qualified host https://www.eiger.io to avoid redirect/security issues. This document models the publicly documented Eiger API V3 surface; consult the official reference at https://www.eiger.io/developer/spec for request and response schemas, which are not fully reproduced here.
+  title: Eiger API V3 Parts API
+  description: REST API for the Markforged Eiger cloud 3D printing platform.
   termsOfService: https://markforged.com/terms
   contact:
     name: Markforged / Eiger Support
@@ -19,7 +19,7 @@ paths:
       operationId: getPart
       tags:
       - Parts
-      summary: Get part details.
+      summary: Get part details
       parameters:
       - name: part_id
         in: path
@@ -34,7 +34,7 @@ paths:
       operationId: uploadStl
       tags:
       - Parts
-      summary: Upload an STL file.
+      summary: Upload an STL file
       requestBody:
         required: true
         content:
@@ -53,7 +53,7 @@ paths:
       operationId: getSliceStatus
       tags:
       - Parts
-      summary: Check slice job status.
+      summary: Check slice job status
       parameters:
       - name: slice_job_id
         in: path
@@ -68,7 +68,7 @@ paths:
       operationId: listSettingsPresets
       tags:
       - Parts
-      summary: List organization settings presets.
+      summary: List organization settings presets
       responses:
         '200':
           description: A list of settings presets.
@@ -77,7 +77,7 @@ paths:
       operationId: getPartVersion
       tags:
       - Parts
-      summary: Get a part version.
+      summary: Get a part version
       parameters:
       - name: part_version_id
         in: path
@@ -92,7 +92,7 @@ paths:
       operationId: getPartVersionDownload
       tags:
       - Parts
-      summary: Get a part version download URL.
+      summary: Get a part version download URL
       parameters:
       - name: part_version_id
         in: path
