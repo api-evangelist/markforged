@@ -1,0 +1,12 @@
+{
+ "url": "https://www.eiger.io/developer/spec",
+ "requested_url": "https://www.eiger.io/developer/spec",
+ "status": 200,
+ "content_type": "text/html; charset=utf-8",
+ "bytes": 93485,
+ "sha256": "4a203dbcc31c96f0c155e8c1c12cdd23d4753f6e465d88997deefc0c9790fe65",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
