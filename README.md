@@ -1,4 +1,4 @@
-# Markforged (markforged)
+# Markforged
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,176 +66,127 @@
 
 Markforged builds industrial additive manufacturing systems - composite (FX, Onyx, X-series) and metal (Metal X, PX100) 3D printers - managed through the Eiger cloud software platform. The Eiger API (V3) exposes a REST interface over HTTP Basic Auth for managing devices, builds, print jobs, and parts, letting customers integrate Markforged additive workflows into ERP, MES, PLM, and other factory systems. Digital Source extends the platform with secure, licensed distribution of manufacturer-certified parts for distributed manufacturing.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/markforged/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/markforged/refs/heads/main/apis.yml)
+**Areas:** 3D Printing · Industrial · Eiger · Fleet Management
 
-## Tags
+## Markforged on APIs.io
 
-- 3D Printing
-- Additive Manufacturing
-- Industrial
-- Eiger
-- Fleet Management
+Everything profiled for Markforged is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/markforged/](https://apis.io/providers/markforged/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (7)
 
-- **Created:** 2026-06-20
-- **Modified:** 2026-06-20
+- [Markforged Digital Source](https://apis.io/apis/markforged/digital-source/) — Secure, licensed distribution of manufacturer-certified parts for distributed (point-of-need) manufacturing. Built on the Markforged platform (ISO 27001…
+- [Markforged Builds API](https://apis.io/apis/markforged/markforged-builds-api/) — The Builds API from Markforged — 5 operation(s) for builds.
+- [Markforged Devices API](https://apis.io/apis/markforged/markforged-devices-api/) — The Devices API from Markforged — 4 operation(s) for devices.
+- [Markforged Organizations API](https://apis.io/apis/markforged/markforged-organizations-api/) — The Organizations API from Markforged — 3 operation(s) for organizations.
+- [Markforged Parts API](https://apis.io/apis/markforged/markforged-parts-api/) — The Parts API from Markforged — 6 operation(s) for parts.
+- [Markforged Print Jobs API](https://apis.io/apis/markforged/markforged-print-jobs-api/) — The Print Jobs API from Markforged — 3 operation(s) for print jobs.
+- [Markforged Printed Parts API](https://apis.io/apis/markforged/markforged-printed-parts-api/) — The Printed Parts API from Markforged — 3 operation(s) for printed parts.
 
-## APIs
+### Published properties
 
-### Eiger Devices API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Lists Markforged printers (devices) in an Eiger organization, reads device state, sends builds to a printer, and manages each device's print queue.
+#### Agentic access (1)
 
-- **Human URL:** [https://www.eiger.io/developer/spec](https://www.eiger.io/developer/spec)
-- **Base URL:** `https://www.eiger.io/api/v3`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Markforged Agentic Access](https://apis.io/agentic-access/markforged/markforged-agentic-access/)
 
-- Devices
-- Printers
-- Fleet
+#### Collections (7)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://www.eiger.io/developer)
-- [API Reference](https://www.eiger.io/developer/spec)
-- [OpenAPI](openapi/markforged-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/markforged.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/markforged.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Eiger API V3](https://apis.io/collections/markforged/open-markforged/)
+- [Eiger API V3 Builds API](https://apis.io/collections/markforged/open-markforged-builds-api/)
+- [Eiger API V3 Builds Devices API](https://apis.io/collections/markforged/open-markforged-devices-api/)
+- [Eiger API V3 Builds Organizations API](https://apis.io/collections/markforged/open-markforged-organizations-api/)
+- [Eiger API V3 Builds Parts API](https://apis.io/collections/markforged/open-markforged-parts-api/)
+- [Eiger API V3 Builds Print Jobs API](https://apis.io/collections/markforged/open-markforged-print-jobs-api/)
+- [Eiger API V3 Builds Printed Parts API](https://apis.io/collections/markforged/open-markforged-printed-parts-api/)
 
-### Eiger Builds API
+#### Security (2)
 
-Lists and retrieves builds, manages the approved-builds list, and routes builds to the backlog or the job-request queue for production.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://www.eiger.io/developer/spec](https://www.eiger.io/developer/spec)
-- **Base URL:** `https://www.eiger.io/api/v3`
+- [Markforged Authentication](https://apis.io/security/markforged/markforged-authentication/)
+- [Markforged Domain Security](https://apis.io/security/markforged/markforged-domain-security/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- Builds
-- Approvals
-- Job Requests
+Published plans, tiers and prices.
 
-#### Properties
+- [Markforged Plans Pricing](https://apis.io/plans/markforged/markforged-plans-pricing/)
 
-- [Documentation](https://www.eiger.io/developer)
-- [API Reference](https://www.eiger.io/developer/spec)
-- [OpenAPI](openapi/markforged-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/markforged.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/markforged.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Rate limits (1)
 
-### Eiger Print Jobs API
+Published request limits.
 
-Lists print jobs and retrieves print job details and scan report URLs for in-process inspection and traceability.
+- [Markforged Rate Limits](https://apis.io/rate-limits/markforged/markforged-rate-limits/)
 
-- **Human URL:** [https://www.eiger.io/developer/spec](https://www.eiger.io/developer/spec)
-- **Base URL:** `https://www.eiger.io/api/v3`
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Print Jobs
-- Production
-- Scan Reports
+- [Markforged Finops](https://apis.io/finops/markforged/markforged-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://www.eiger.io/developer)
-- [API Reference](https://www.eiger.io/developer/spec)
-- [OpenAPI](openapi/markforged-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/markforged.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/markforged.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Eiger Parts API
-
-Retrieves parts and part versions, uploads STL files, checks slice job status, downloads part versions, and lists organization settings presets.
-
-- **Human URL:** [https://www.eiger.io/developer/spec](https://www.eiger.io/developer/spec)
-- **Base URL:** `https://www.eiger.io/api/v3`
-
-#### Tags
-
-- Parts
-- STL Upload
-- Slicing
-
-#### Properties
-
-- [Documentation](https://www.eiger.io/developer)
-- [API Reference](https://www.eiger.io/developer/spec)
-- [OpenAPI](openapi/markforged-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/markforged.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/markforged.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Eiger Printed Parts API
-
-Lists physically printed parts, retrieves printed part details, and fetches per-printed-part scan reports for the additive digital inventory.
-
-- **Human URL:** [https://www.eiger.io/developer/spec](https://www.eiger.io/developer/spec)
-- **Base URL:** `https://www.eiger.io/api/v3`
-
-#### Tags
-
-- Printed Parts
-- Inventory
-- Scan Reports
-
-#### Properties
-
-- [Documentation](https://www.eiger.io/developer)
-- [API Reference](https://www.eiger.io/developer/spec)
-- [OpenAPI](openapi/markforged-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/markforged.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/markforged.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Eiger Organizations API
-
-Lists and retrieves users scoped to the Eiger organization and exports custom analytics CSV from the dashboard for organization-level reporting.
-
-- **Human URL:** [https://www.eiger.io/developer/spec](https://www.eiger.io/developer/spec)
-- **Base URL:** `https://www.eiger.io/api/v3`
-
-#### Tags
-
-- Organizations
-- Users
-- Analytics
-
-#### Properties
-
-- [Documentation](https://www.eiger.io/developer)
-- [API Reference](https://www.eiger.io/developer/spec)
-- [OpenAPI](openapi/markforged-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/markforged.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/markforged.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Markforged Digital Source
-
-Secure, licensed distribution of manufacturer-certified parts for distributed (point-of-need) manufacturing. Built on the Markforged platform (ISO 27001 certified); no separate public developer API is documented as of this catalog date - integration is via the Eiger platform and partner arrangements.
-
-- **Human URL:** [https://markforged.com/management-integration](https://markforged.com/management-integration)
-
-#### Tags
-
-- Digital Source
-- Distributed Manufacturing
-- Licensing
-
-#### Properties
-
-- [Documentation](https://markforged.com/management-integration)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/MarkForged)
-- [LinkedIn](https://www.linkedin.com/company/markforged)
 - [Website](https://markforged.com)
 - [Documentation](https://www.eiger.io/developer)
-- [Plans](plans/markforged-plans-pricing.yml)
-- [Rate Limits](rate-limits/markforged-rate-limits.yml)
-- [Fin Ops](finops/markforged-finops.yml)
+- [Blog](https://markforged.com/resources/blog)
+- [GitHub](https://github.com/MarkForged)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 23.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 44.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 32.1 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/markforged/](https://apis.io/providers/markforged/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Markforged: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/markforged/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
